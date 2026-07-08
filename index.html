@@ -5,79 +5,143 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Maiar Ghodbane | Scientific Portfolio</title>
   <link rel="stylesheet" href="style.css" />
+  <script src="https://3Dmol.org/build/3Dmol-min.js"></script>
 </head>
-<body>
 
+<body>
   <canvas id="particles"></canvas>
 
-  <header class="hero">
-    <nav>
-      <h2>Maiar Ghodbane</h2>
-      <div>
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
-        <a href="#contact">Contact</a>
-      </div>
-    </nav>
+  <nav>
+    <h2>Maiar <span>Ghodbane</span></h2>
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
 
-    <section class="hero-content">
-      <p class="tag">Biotechnology & Molecular Engineering</p>
-      <h1>Experimental Biotechnology × Molecular Modeling × Drug Discovery</h1>
-      <p class="intro">
-        Bridging experimental biology and computational structural biology to explore biomolecular mechanisms and therapeutic innovation.
+  <section id="home" class="hero">
+    <div class="hero-text">
+      <p class="tag">BIOTECHNOLOGY & MOLECULAR ENGINEERING</p>
+
+      <h1>Maiar<br><span>Ghodbane</span></h1>
+
+      <p class="keywords">
+        EXPERIMENTAL BIOTECHNOLOGY ×<br>
+        MOLECULAR MODELING ×<br>
+        DRUG DISCOVERY
       </p>
+
+      <p class="intro">
+        Bridging experimental biology and computational structural biology
+        to explore biomolecular mechanisms and therapeutic innovation.
+      </p>
+
       <div class="buttons">
-        <a href="#projects" class="btn primary">View Projects</a>
-        <a href="#contact" class="btn secondary">Contact Me</a>
+        <a class="btn primary" href="#projects">View Projects</a>
+        <a class="btn secondary" href="#contact">Contact Me</a>
       </div>
-    </section>
-  </header>
+    </div>
 
-  <section id="about" class="section">
-    <h2>About</h2>
-    <p>
-      I am a Master's student in Biotechnology and Molecular Engineering with a multidisciplinary background in biotechnology engineering, pharmaceutical biotechnology, molecular dynamics and experimental biology.
-    </p>
-  </section>
-
-  <section id="projects" class="section">
-    <h2>Research Projects</h2>
-
-    <div class="cards">
-      <div class="card">
-        <h3>Molecular Dynamics of Nucleosome 1KX5</h3>
-        <p>AMBER, TLEaP, PMEMD, CPPTRAJ, Python, RMSD, RMSF, PCA, distance and contact analysis.</p>
-      </div>
-
-      <div class="card">
-        <h3>Topical Formulation for Atopic Dermatitis</h3>
-        <p>Designed and developed a topical pharmaceutical formulation from concept to in vivo evaluation.</p>
-      </div>
-
-      <div class="card">
-        <h3>Natural Cosmetic Formulation Project</h3>
-        <p>Independent formulation project including excipient selection, quality control, branding and commercialization.</p>
+    <div class="hero-visual">
+      <div id="protein-viewer"></div>
+      <div class="floating-card">
+        <strong>Protein–Ligand Complex</strong>
+        <p>Molecular dynamics • Interaction analysis</p>
       </div>
     </div>
   </section>
 
-  <section id="skills" class="section">
-    <h2>Core Competencies</h2>
-    <div class="skills">
-      <div>
-        <h3>Experimental</h3>
-        <p>Molecular Biology • Cell Culture • In Vivo • Microbiology • Pharmaceutical Formulation • Quality Control</p>
+  <section id="about" class="about">
+    <div class="photo-card">
+      <img src="assets/profile.jpg" alt="Maiar Ghodbane" />
+    </div>
+
+    <div class="about-text">
+      <p class="section-tag">ABOUT ME</p>
+      <h2>Passionate about understanding life at the <span>molecular level.</span></h2>
+      <p>
+        I am a Master's student in Biotechnology and Molecular Engineering with a multidisciplinary
+        background in experimental biotechnology, pharmaceutical R&D, molecular dynamics and structural biology.
+      </p>
+      <p>
+        I aim to combine wet-lab expertise with computational tools to investigate complex biological systems
+        and contribute to therapeutic innovation.
+      </p>
+
+      <div class="mini-skills">
+        <div>Experimental Biotechnology</div>
+        <div>Molecular Modeling</div>
+        <div>Structural Biology</div>
+        <div>Drug Discovery</div>
       </div>
-      <div>
-        <h3>Computational</h3>
-        <p>Molecular Dynamics • AMBER • Python • Linux • MATLAB • Structural Bioinformatics • Molecular Modeling</p>
+
+      <a class="btn secondary" href="assets/Maiar_Ghodbane_CV.pdf" target="_blank">Download CV</a>
+    </div>
+  </section>
+
+  <section id="projects" class="projects">
+    <p class="section-tag">RESEARCH HIGHLIGHTS</p>
+    <h2>Selected Projects</h2>
+
+    <div class="project-grid">
+      <div class="project-card">
+        <img src="assets/nucleosome.jpg" alt="Nucleosome molecular dynamics" />
+        <div>
+          <h3>Molecular Dynamics of Nucleosome 1KX5</h3>
+          <p>Investigating histone modifications and nucleosome dynamics using AMBER, CPPTRAJ and Python.</p>
+          <span>Molecular Dynamics</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img src="assets/ligand.jpg" alt="Topical formulation project" />
+        <div>
+          <h3>Topical Formulation for Atopic Dermatitis</h3>
+          <p>Designed and developed a novel topical formulation from concept to in vivo evaluation.</p>
+          <span>Pharmaceutical R&D</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img src="assets/cosmetic.jpg" alt="Natural cosmetic formulation" />
+        <div>
+          <h3>Natural Cosmetic Project</h3>
+          <p>Formulation of natural cosmetic products from active ingredients to commercialization.</p>
+          <span>Formulation Science</span>
+        </div>
       </div>
     </div>
   </section>
 
-  <section id="contact" class="section contact">
-    <h2>Contact</h2>
+  <section id="skills" class="skills-section">
+    <p class="section-tag">CORE COMPETENCIES</p>
+    <h2>Scientific & Technical Expertise</h2>
+
+    <div class="skills-grid">
+      <div class="skill-box">
+        <h3>Experimental Expertise</h3>
+        <p>
+          Molecular Biology • Cell Culture • In Vivo Experimentation • Microbiology • Pharmaceutical Formulation •
+          Bioactive Molecule Synthesis • Natural Product Extraction • Quality Control • Pharmacological Evaluation
+        </p>
+      </div>
+
+      <div class="skill-box">
+        <h3>Computational Expertise</h3>
+        <p>
+          Molecular Dynamics • AMBER • Molecular Modeling • Molecular Docking • Structural Bioinformatics •
+          Trajectory Analysis • Python • MATLAB • Linux • PyMOL • VMD
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <p class="section-tag">CONTACT</p>
+    <h2>Let's connect</h2>
     <p>Email: maiarghodbane@gmail.com</p>
     <p>LinkedIn: add your link here</p>
   </section>
