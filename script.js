@@ -10,13 +10,13 @@ for (let i = 0; i < 70; i++) {
   particles.push({
     x: Math.random() * canvas.width,
     y: Math.random() * canvas.height,
-    vx: (Math.random() - 0.5) * 0.35,
-    vy: (Math.random() - 0.5) * 0.35,
+    vx: (Math.random() - 0.5) * 0.25,
+    vy: (Math.random() - 0.5) * 0.25,
     r: Math.random() * 2 + 1
   });
 }
 
-function animate() {
+function animateParticles() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
   particles.forEach((p, i) => {
@@ -28,31 +28,65 @@ function animate() {
 
     ctx.beginPath();
     ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-    ctx.fillStyle = "#00a6a6";
+    ctx.fillStyle = "#00a99d";
     ctx.fill();
 
     for (let j = i + 1; j < particles.length; j++) {
-      let q = particles[j];
-      let dx = p.x - q.x;
-      let dy = p.y - q.y;
-      let dist = Math.sqrt(dx * dx + dy * dy);
+      const q = particles[j];
+      const dx = p.x - q.x;
+      const dy = p.y - q.y;
+      const dist = Math.sqrt(dx * dx + dy * dy);
 
-      if (dist < 120) {
+      if (dist < 130) {
         ctx.beginPath();
         ctx.moveTo(p.x, p.y);
         ctx.lineTo(q.x, q.y);
-        ctx.strokeStyle = `rgba(0,166,166,${0.28 * (1 - dist / 120)})`;
+        ctx.strokeStyle = `rgba(0,169,157,${0.22 * (1 - dist / 130)})`;
         ctx.stroke();
       }
     }
   });
 
-  requestAnimationFrame(animate);
+  requestAnimationFrame(animateParticles);
 }
 
-animate();
+animateParticles();
 
 window.addEventListener("resize", () => {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
 });
+
+/* 3D rotating protein */
+let viewer = $3Dmol.createViewer("protein-viewer", {
+  backgroundColor: "rgba(255,255,255,0)"
+});
+
+fetch("assets/protein.pdb")
+  .then(response => response.text())
+  .then(data => {
+    viewer.addModel(data, "pdb");
+
+    viewer.setStyle({protein: true}, {
+      cartoon: {
+        color: "teal",
+        opacity: 0.9
+      }
+    });
+
+    viewer.setStyle({hetflag: true}, {
+      stick: {
+        colorscheme: "greenCarbon",
+        radius: 0.25
+      }
+    });
+
+    viewer.addSurface($3Dmol.SurfaceType.VDW, {
+      opacity: 0.45,
+      color: "white"
+    }, {protein: true});
+
+    viewer.zoomTo();
+    viewer.spin("y", 0.7);
+    viewer.render();
+  });
