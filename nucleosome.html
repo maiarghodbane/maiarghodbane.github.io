@@ -1,1 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nucleosome MD Project | Maiar Ghodbane</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://3Dmol.org/build/3Dmol-min.js"></script>
+</head>
 
+<body>
+  <nav>
+    <h2>Maiar <span>Ghodbane</span></h2>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="index.html#projects">Projects</a>
+      <a href="index.html#skills">Skills</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+  </nav>
+
+  <section class="project-page">
+    <div class="project-header">
+      <div>
+        <p class="section-tag">MOLECULAR DYNAMICS PROJECT</p>
+        <h1 class="project-title">Molecular Dynamics of Nucleosome 1KX5</h1>
+        <p class="project-intro">
+          Studying how post-translational histone modifications may influence nucleosome compaction,
+          DNA–histone interactions and chromatin structural dynamics using all-atom molecular dynamics simulations.
+        </p>
+      </div>
+
+      <div id="nucleosome-viewer"></div>
+    </div>
+
+    <div class="project-content">
+      <div class="project-box">
+        <h2>Project Overview</h2>
+        <p>
+          This project focuses on the nucleosome, the fundamental unit of chromatin organization.
+          I work on the structure PDB 1KX5 and investigate how histone post-translational modifications
+          may affect nucleosome dynamics, compaction and DNA–protein contacts.
+        </p>
+      </div>
+
+      <div class="project-box">
+        <h2>What I Did</h2>
+        <ul>
+          <li>Prepared the nucleosome structure PDB 1KX5 for molecular dynamics simulations.</li>
+          <li>Assigned force fields for both DNA and histone proteins using AMBER tools.</li>
+          <li>Generated topology and coordinate files using TLEaP.</li>
+          <li>Performed solvation, ion neutralization and system preparation.</li>
+          <li>Ran molecular dynamics simulations using PMEMD.</li>
+          <li>Analysed trajectories using CPPTRAJ and Python.</li>
+        </ul>
+      </div>
+
+      <div class="project-box">
+        <h2>Analyses Performed</h2>
+        <p>
+          RMSD • RMSF • PCA • distance analysis • DNA–protein contact analysis • trajectory visualization • structural interpretation.
+        </p>
+      </div>
+
+      <div class="project-box">
+        <h2>Skills Developed</h2>
+        <p>
+          AMBER workflow • TLEaP • PMEMD • CPPTRAJ • Python scripting • Linux environment • biomolecular system preparation •
+          trajectory analysis • structural biology interpretation.
+        </p>
+      </div>
+
+      <div class="project-box">
+        <h2>What I Can Do Independently</h2>
+        <ul>
+          <li>Prepare biomolecular systems for molecular dynamics simulations.</li>
+          <li>Generate AMBER topology and coordinate files.</li>
+          <li>Set up solvation and ion neutralization protocols.</li>
+          <li>Run MD simulations using AMBER/PMEMD.</li>
+          <li>Analyse trajectories with CPPTRAJ.</li>
+          <li>Write Python scripts for RMSD, RMSF, PCA, distance and contact analyses.</li>
+          <li>Interpret structural changes in relation to biological function.</li>
+        </ul>
+      </div>
+
+      <a class="btn primary" href="index.html#projects">Back to Projects</a>
+    </div>
+  </section>
+
+  <script>
+    let viewer = $3Dmol.createViewer("nucleosome-viewer", {
+      backgroundColor: "rgba(255,255,255,0)"
+    });
+
+    fetch("assets/nucleosome.pdb")
+      .then(response => response.text())
+      .then(data => {
+        viewer.addModel(data, "pdb");
+
+        viewer.setStyle({}, {});
+
+        viewer.setStyle({hetflag: false}, {
+          cartoon: {
+            color: "spectrum",
+            opacity: 0.95
+          }
+        });
+
+        viewer.addStyle({resn: ["DA", "DT", "DG", "DC"]}, {
+          stick: {
+            colorscheme: "cyanCarbon",
+            radius: 0.18
+          }
+        });
+
+        viewer.zoomTo();
+        viewer.spin("y", 0.4);
+        viewer.render();
+      });
+  </script>
+</body>
+</html>
