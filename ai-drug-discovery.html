@@ -50,47 +50,54 @@
     </p>
   </section>
 
-  <section id="workflow" class="form-timeline">
-    <p class="section-tag">COMPUTATIONAL WORKFLOW</p>
-    <h2>Cheminformatics & Machine Learning Pipeline</h2>
+  <section id="workflow" class="ai-pipeline-section">
+  <p class="section-tag">COMPUTATIONAL WORKFLOW</p>
+  <h2>Cheminformatics & Machine Learning Pipeline</h2>
 
-    <div class="ai-workflow-grid">
-      <div class="ai-card">
-        <img src="assets/ai/chembl.png" alt="ChEMBL database" />
-        <h3>ChEMBL Data Collection</h3>
-        <p>Retrieved BACE1 bioactivity data, including IC50 values and molecular structures.</p>
-      </div>
+  <div class="clean-pipeline">
 
-      <div class="ai-card">
-        <div class="ai-number">01</div>
-        <h3>Data Preprocessing</h3>
-        <p>Cleaned missing values, removed duplicates, standardized IC50 values and calculated pIC50.</p>
-      </div>
-
-      <div class="ai-card">
-        <img src="assets/ai/rdkit.png" alt="RDKit descriptors" />
-        <h3>Lipinski & RDKit</h3>
-        <p>Calculated molecular weight, LogP, hydrogen bond donors and acceptors.</p>
-      </div>
-
-      <div class="ai-card">
-        <div class="ai-number">02</div>
-        <h3>Molecular Descriptors</h3>
-        <p>Generated molecular fingerprints and descriptors for machine learning model training.</p>
-      </div>
-
-      <div class="ai-card">
-        <img src="assets/ai/random-forest.png" alt="Random Forest model" />
-        <h3>Random Forest Model</h3>
-        <p>Trained a Random Forest regressor to predict compound activity against BACE1.</p>
-      </div>
-
-      <div class="ai-card special-card">
-        <h3>Prediction & Interpretation</h3>
-        <p>Evaluated model performance and explored descriptor importance for activity prediction.</p>
-      </div>
+    <div class="pipeline-step">
+      <h3>ChEMBL</h3>
+      <p>BACE1 bioactivity data collection</p>
     </div>
-  </section>
+
+    <div class="pipeline-arrow">→</div>
+
+    <div class="pipeline-step">
+      <h3>Data Cleaning</h3>
+      <p>IC50 filtering, duplicates removal, pIC50 calculation</p>
+    </div>
+
+    <div class="pipeline-arrow">→</div>
+
+    <div class="pipeline-step">
+      <h3>RDKit</h3>
+      <p>Lipinski descriptors and molecular properties</p>
+    </div>
+
+    <div class="pipeline-arrow">→</div>
+
+    <div class="pipeline-step">
+      <h3>Descriptors</h3>
+      <p>Fingerprints and feature preparation</p>
+    </div>
+
+    <div class="pipeline-arrow">→</div>
+
+    <div class="pipeline-step">
+      <h3>Random Forest</h3>
+      <p>QSAR regression model training</p>
+    </div>
+
+    <div class="pipeline-arrow">→</div>
+
+    <div class="pipeline-step">
+      <h3>Prediction</h3>
+      <p>Model evaluation and interpretation</p>
+    </div>
+
+  </div>
+</section>
 
   <section class="project-content">
     <div class="project-box">
