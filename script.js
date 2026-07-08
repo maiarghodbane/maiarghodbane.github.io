@@ -58,7 +58,6 @@ window.addEventListener("resize", () => {
 });
 
 /* 3D rotating protein */
-/* 3D rotating protein */
 let viewer = $3Dmol.createViewer("protein-viewer", {
   backgroundColor: "rgba(255,255,255,0)"
 });
@@ -68,27 +67,24 @@ fetch("assets/protein.cif")
   .then(data => {
     viewer.addModel(data, "cif");
 
-    // Protein in cartoon/ribbon representation
-    viewer.setStyle({protein: true}, {
+    // Hide everything first
+    viewer.setStyle({}, {});
+
+    // Protein cartoon representation
+    viewer.setStyle({polymer: true}, {
       cartoon: {
-        color: "teal",
+        color: "spectrum",
         opacity: 0.95
       }
     });
 
-    // Ligands only in sticks
+    // Ligands in sticks, excluding water
     viewer.setStyle({hetflag: true, not: {resn: "HOH"}}, {
       stick: {
         colorscheme: "greenCarbon",
-        radius: 0.22
+        radius: 0.28
       }
     });
-
-    // Optional: remove surface if you don't like the blob effect
-    // viewer.addSurface($3Dmol.SurfaceType.VDW, {
-    //   opacity: 0.25,
-    //   color: "white"
-    // }, {protein: true});
 
     viewer.zoomTo();
     viewer.spin("y", 0.7);
