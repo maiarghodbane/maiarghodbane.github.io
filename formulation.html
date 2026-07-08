@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Topical Formulation Project | Maiar Ghodbane</title>
+  <title>Topical Antihistamine Formulation | Maiar Ghodbane</title>
   <link rel="stylesheet" href="style.css" />
+  <script src="https://3Dmol.org/build/3Dmol-min.js"></script>
 </head>
 
 <body>
@@ -18,193 +19,136 @@
     </div>
   </nav>
 
-  <section class="project-page">
-    <div class="project-header">
-      <div>
-        <p class="section-tag">PHARMACEUTICAL R&D PROJECT</p>
-        <h1 class="project-title">Topical Antihistamine Formulation for Atopic Dermatitis</h1>
-        <p class="project-intro">
-          From quality control of HISTAGAN® syrup to the development of a new topical formulation
-          based on dexchlorpheniramine maleate and in vivo evaluation in an atopic dermatitis model.
-        </p>
+  <section class="formulation-hero">
+    <div>
+      <p class="section-tag">PHARMACEUTICAL R&D PROJECT</p>
+      <h1 class="formulation-title">Topical Antihistamine Drug Repurposing</h1>
+      <p class="project-intro">
+        From industrial production and quality control of HISTAGAN® syrup to the development of a topical formulation
+        based on dexchlorpheniramine maleate for atopic dermatitis.
+      </p>
+      <a class="btn primary" href="#story">Explore Project</a>
+    </div>
+
+    <div class="molecule-panel">
+      <div id="dex-viewer"></div>
+      <div class="molecule-card">
+        <strong>Dexchlorpheniramine Maleate</strong>
+        <p>Antihistamine • Drug repurposing • Topical formulation</p>
       </div>
-
-      <div class="workflow-hero-card">
-        <div class="molecule-icon">⌬</div>
-        <h3>Oral Drug → Topical Therapy</h3>
-        <p>Quality control • Reformulation • In vivo evaluation</p>
-      </div>
-    </div>
-
-   <div class="project-content">
-
-  <div class="project-box">
-    <h2>My Scientific Journey</h2>
-    <p>Click on each step to explore the logic of the project.</p>
-
-    <div class="workflow">
-      <button class="workflow-step active" data-info="step1">🏭 Industrial Production</button>
-      <button class="workflow-step" data-info="step2">🧪 Quality Control</button>
-      <button class="workflow-step" data-info="step3">💡 Research Idea</button>
-      <button class="workflow-step" data-info="step4">⚗️ Formulation Design</button>
-      <button class="workflow-step" data-info="step5">🐭 In Vivo Model</button>
-      <button class="workflow-step" data-info="step6">📈 Evaluation</button>
-    </div>
-
-    <div class="workflow-info active" id="step1">
-      <h3>Industrial Production</h3>
-      <p>I followed the industrial production process of HISTAGAN® syrup at SAIDAL, from formulation steps to packaging and quality control workflow.</p>
-    </div>
-
-    <div class="workflow-info" id="step2">
-      <h3>Quality Control</h3>
-      <p>I worked on physicochemical and microbiological quality control of the commercial syrup, including active ingredient, finished product and purified water controls.</p>
-    </div>
-
-    <div class="workflow-info" id="step3">
-      <h3>Research Idea</h3>
-      <p>I proposed to repurpose the same antihistamine active ingredient into a topical dosage form to target symptoms of atopic dermatitis locally.</p>
-    </div>
-
-    <div class="workflow-info" id="step4">
-      <h3>Formulation Design</h3>
-      <p>I selected excipients, designed the formulation strategy and prepared the ointment dosage form.</p>
-    </div>
-
-    <div class="workflow-info" id="step5">
-      <h3>In Vivo Model</h3>
-      <p>I evaluated the formulation using an experimental atopic dermatitis model induced by DNCB in mice.</p>
-    </div>
-
-    <div class="workflow-info" id="step6">
-      <h3>Therapeutic Evaluation</h3>
-      <p>The formulation was assessed using lesion scoring and scratching behaviour to evaluate its potential effect on dermatitis symptoms.</p>
-    </div>
-  </div>
-
-  <div class="project-box">
-    <h2>What I Did</h2>
-    <ul>
-      <li>Followed the industrial manufacturing process of HISTAGAN® syrup.</li>
-      <li>Performed quality control of the commercial oral antihistamine formulation.</li>
-      <li>Proposed the development of a topical formulation using dexchlorpheniramine maleate.</li>
-      <li>Designed the formulation strategy and selected pharmaceutical excipients.</li>
-      <li>Prepared the ointment and performed physicochemical and microbiological controls.</li>
-      <li>Evaluated the formulation in an in vivo atopic dermatitis model.</li>
-    </ul>
-  </div>
-
-  <div class="project-box">
-    <h2>What I Can Do Independently</h2>
-    <ul>
-      <li>Design a basic pharmaceutical formulation strategy.</li>
-      <li>Select excipients according to formulation needs.</li>
-      <li>Prepare topical dosage forms such as ointments.</li>
-      <li>Perform pH, homogeneity, sterility and physicochemical controls.</li>
-      <li>Follow industrial quality control workflows.</li>
-      <li>Interpret preclinical in vivo observations and lesion scoring.</li>
-    </ul>
-  </div>
-
-  <div class="project-box">
-    <h2>Skills Developed</h2>
-    <p>
-      Pharmaceutical formulation • Industrial production monitoring • Quality control • Pharmacology •
-      In vivo experimentation • Microbiology • Physicochemical characterization • Drug repurposing •
-      Preclinical evaluation
-    </p>
-  </div>
-
-  <a class="btn primary" href="index.html#projects">Back to Projects</a>
-</div>
-
-        <div class="workflow-info active" id="step1">
-          <h3>HISTAGAN® Syrup</h3>
-          <p>
-             I worked on HISTAGAN® 0.01%, an oral antihistamine syrup containing dexchlorpheniramine maleate.
-            During this project, I followed both the industrial production process and the quality control workflow
-            of the commercial formulation at SAIDAL..
-          </p>
-        </div>
-
-        <div class="workflow-info" id="step2">
-          <h3>Quality Control</h3>
-          <p>
-            I performed and followed physicochemical and microbiological quality control procedures,
-            including analytical checks of the active ingredient, finished product and purified water.
-          </p>
-        </div>
-
-        <div class="workflow-info" id="step3">
-          <h3>Topical Reformulation</h3>
-          <p>
-            I proposed the idea of developing a new topical dosage form using the same active pharmaceutical ingredient,
-            with the goal of targeting symptoms associated with atopic dermatitis.
-          </p>
-        </div>
-
-        <div class="workflow-info" id="step4">
-          <h3>Ointment Development</h3>
-          <p>
-            I selected excipients, designed the formulation strategy, prepared the ointment and performed
-            physicochemical quality controls such as homogeneity, pH and sterility assessment.
-          </p>
-        </div>
-
-        <div class="workflow-info" id="step5">
-          <h3>In Vivo Atopic Dermatitis Model</h3>
-          <p>
-            I evaluated the formulation in an experimental atopic dermatitis model induced by DNCB in mice,
-            comparing untreated and treated conditions.
-          </p>
-        </div>
-
-        <div class="workflow-info" id="step6">
-          <h3>Therapeutic Evaluation</h3>
-          <p>
-            The formulation was assessed through lesion scoring and scratching behaviour,
-            allowing evaluation of its potential effect on dermatitis symptoms.
-          </p>
-        </div>
-      </div>
-
-      <div class="project-box">
-        <h2>My Contribution</h2>
-        <ul>
-          <li>Followed the industrial production process of HISTAGAN® syrup, from formulation steps to quality control.</li>
-          <li>Proposed the concept of repurposing an oral antihistamine active ingredient into a topical formulation.</li>
-          <li>Designed and prepared the ointment formulation.</li>
-          <li>Selected excipients based on formulation requirements.</li>
-          <li>Performed physicochemical and microbiological quality controls.</li>
-          <li>Evaluated the formulation using an in vivo atopic dermatitis model.</li>
-        </ul>
-      </div>
-
-      <div class="project-box">
-        <h2>Skills Developed</h2>
-        <p>
-          Pharmaceutical formulation • Quality control • Pharmacology • In vivo experimentation •
-          Microbiology • Physicochemical characterization • Drug repurposing • Preclinical evaluation
-        </p>
-      </div>
-
-      <a class="btn primary" href="index.html#projects">Back to Projects</a>
     </div>
   </section>
 
+  <section id="story" class="projects">
+    <p class="section-tag">SCIENTIFIC STORY</p>
+    <h2>From Oral Syrup to Topical Therapy</h2>
+
+    <div class="story-grid">
+      <div class="story-card">
+        <img src="assets/formulation/production.png" alt="Industrial production">
+        <h3>Industrial Production</h3>
+        <p>I followed the industrial manufacturing process of HISTAGAN® syrup at SAIDAL.</p>
+      </div>
+
+      <div class="story-card">
+        <img src="assets/formulation/hplc.png" alt="HPLC quality control">
+        <h3>Quality Control</h3>
+        <p>Physicochemical and microbiological quality control, including HPLC-based analytical evaluation.</p>
+      </div>
+
+      <div class="story-card">
+        <div id="dex-2d-viewer"></div>
+        <h3>Research Idea</h3>
+        <p>Repurposing the same active ingredient from oral administration to a topical dosage form.</p>
+      </div>
+
+      <div class="story-card">
+        <img src="assets/formulation/in-vivo.png" alt="In vivo evaluation">
+        <h3>In Vivo Evaluation</h3>
+        <p>Evaluation in a DNCB-induced atopic dermatitis model using lesion scoring and scratching behaviour.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="project-content">
+
+    <div class="project-box">
+      <h2>What I Did</h2>
+      <ul>
+        <li>Followed the industrial manufacturing process of HISTAGAN® syrup.</li>
+        <li>Performed quality control of a commercial oral antihistamine formulation.</li>
+        <li>Used analytical and quality control methods including HPLC, IR, pH, density and microbiological testing.</li>
+        <li>Proposed the development of a topical formulation using dexchlorpheniramine maleate.</li>
+        <li>Designed the formulation strategy and selected pharmaceutical excipients.</li>
+        <li>Prepared the ointment and performed physicochemical and microbiological controls.</li>
+        <li>Evaluated the formulation in an in vivo atopic dermatitis model.</li>
+      </ul>
+    </div>
+
+    <div class="project-box">
+      <h2>What I Can Do Independently</h2>
+      <ul>
+        <li>Follow an industrial pharmaceutical production workflow.</li>
+        <li>Design a basic topical formulation strategy.</li>
+        <li>Select excipients according to formulation needs.</li>
+        <li>Prepare topical dosage forms such as ointments.</li>
+        <li>Perform pH, homogeneity, sterility and physicochemical controls.</li>
+        <li>Use and interpret HPLC-based quality control data.</li>
+        <li>Interpret preclinical in vivo observations and lesion scoring.</li>
+      </ul>
+    </div>
+
+    <div class="project-box">
+      <h2>Skills Developed</h2>
+      <p>
+        Pharmaceutical formulation • Industrial production monitoring • HPLC • Quality control • Pharmacology •
+        In vivo experimentation • Microbiology • Physicochemical characterization • Drug repurposing • Preclinical evaluation
+      </p>
+    </div>
+
+    <a class="btn primary" href="index.html#projects">Back to Projects</a>
+  </section>
+
   <script>
-    const steps = document.querySelectorAll(".workflow-step");
-    const infos = document.querySelectorAll(".workflow-info");
-
-    steps.forEach(step => {
-      step.addEventListener("click", () => {
-        steps.forEach(s => s.classList.remove("active"));
-        infos.forEach(info => info.classList.remove("active"));
-
-        step.classList.add("active");
-        document.getElementById(step.dataset.info).classList.add("active");
-      });
+    const dexViewer = $3Dmol.createViewer("dex-viewer", {
+      backgroundColor: "rgba(255,255,255,0)"
     });
+
+    fetch("assets/formulation/dexchlorpheniramine.sdf")
+      .then(response => response.text())
+      .then(data => {
+        dexViewer.addModel(data, "sdf");
+        dexViewer.setStyle({}, {
+          stick: {
+            colorscheme: "greenCarbon",
+            radius: 0.22
+          },
+          sphere: {
+            scale: 0.22
+          }
+        });
+        dexViewer.zoomTo();
+        dexViewer.spin("y", 0.8);
+        dexViewer.render();
+      });
+
+    const dex2DViewer = $3Dmol.createViewer("dex-2d-viewer", {
+      backgroundColor: "rgba(255,255,255,0)"
+    });
+
+    fetch("assets/formulation/dexchlorpheniramine-2d.sdf")
+      .then(response => response.text())
+      .then(data => {
+        dex2DViewer.addModel(data, "sdf");
+        dex2DViewer.setStyle({}, {
+          stick: {
+            colorscheme: "greenCarbon",
+            radius: 0.18
+          }
+        });
+        dex2DViewer.zoomTo();
+        dex2DViewer.render();
+      });
   </script>
 </body>
 </html>
