@@ -1,1 +1,129 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+body {
+  font-family: Arial, sans-serif;
+  background: #050816;
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+#particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 8%;
+}
+
+nav a {
+  color: #c9d6ff;
+  margin-left: 25px;
+  text-decoration: none;
+}
+
+.hero {
+  min-height: 100vh;
+}
+
+.hero-content {
+  padding: 18vh 8%;
+  max-width: 900px;
+}
+
+.tag {
+  color: #64ffda;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 55px;
+  line-height: 1.1;
+  margin-bottom: 25px;
+}
+
+.intro {
+  font-size: 20px;
+  color: #c9d6ff;
+  max-width: 700px;
+}
+
+.buttons {
+  margin-top: 35px;
+}
+
+.btn {
+  padding: 14px 24px;
+  border-radius: 30px;
+  text-decoration: none;
+  margin-right: 15px;
+}
+
+.primary {
+  background: #64ffda;
+  color: #050816;
+}
+
+.secondary {
+  border: 1px solid #64ffda;
+  color: #64ffda;
+}
+
+.section {
+  padding: 90px 8%;
+}
+
+.section h2 {
+  font-size: 35px;
+  margin-bottom: 30px;
+  color: #64ffda;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+}
+
+.card, .skills div {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 25px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.card:hover, .skills div:hover {
+  transform: translateY(-10px);
+  background: rgba(100, 255, 218, 0.12);
+}
+
+.card h3, .skills h3 {
+  margin-bottom: 15px;
+}
+
+.card p, .section p {
+  color: #c9d6ff;
+  line-height: 1.6;
+}
+
+.skills {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+.contact {
+  padding-bottom: 120px;
+}
