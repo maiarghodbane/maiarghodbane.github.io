@@ -62,35 +62,42 @@ let viewer = $3Dmol.createViewer("protein-viewer", {
   backgroundColor: "rgba(255,255,255,0)"
 });
 
-fetch("assets/1HVR.pdb")
+fetch("assets/protein.pdb")
   .then(response => response.text())
   .then(data => {
-    let model = viewer.addModel(data, "pdb");
+    viewer.addModel(data, "pdb");
 
-    // Hide everything first
+    // Clear all default styles
     viewer.setStyle({}, {});
 
-    // Protein cartoon
-    viewer.setStyle({resn: ["ALA","ARG","ASN","ASP","CYS","GLN","GLU","GLY","HIS","ILE","LEU","LYS","MET","PHE","PRO","SER","THR","TRP","TYR","VAL"]}, {
+    // Show all ATOM protein residues as cartoon
+    viewer.setStyle({hetflag: false}, {
       cartoon: {
         color: "teal",
         opacity: 0.95
       }
     });
 
-    // Ligand in sticks, excluding water and ions
-    viewer.setStyle({hetflag: true, not: {resn: "HOH"}}, {
+    // Show non-water ligands as sticks
+    viewer.setStyle({hetflag: true, resn: ["LIG", "INH", "DRG"]}, {
       stick: {
         colorscheme: "greenCarbon",
-        radius: 0.3
+        radius: 0.28
       }
     });
 
-    viewer.zoomTo();
-    viewer.spin("y", 0.7);
+    // Fallback: if ligand name is different, show all HETATM except water
+    viewer.addStyle({hetflag: true, not: {resn: "HOH"}}, {
+      stick: {
+        colorscheme: "greenCarbon",
+        radius: 0.22
+      }
+    });
+
+    viewer.zoomTo({hetflag: false});
+    viewer.spin("y", 0.6);
     viewer.render();
-  });
-    viewer.zoomTo();
-    viewer.spin("y", 0.7);
-    viewer.render();
+  })
+  .catch(error => {
+    console.error("Protein loading error:", error);
   });
