@@ -547,6 +547,8 @@ h2 span { color: #00a99d; }
   width: 100%;
   height: 210px;
   background: linear-gradient(135deg, #f7ffff, #eefafa);
+  border-radius: 26px 26px 0 0;
+  overflow: hidden;
 }
 
 @media (max-width: 900px) {
