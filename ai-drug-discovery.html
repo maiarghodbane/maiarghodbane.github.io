@@ -1,1 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI-Assisted Drug Discovery | Maiar Ghodbane</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://3Dmol.org/build/3Dmol-min.js"></script>
+</head>
 
+<body>
+  <canvas id="ai-network"></canvas>
+
+  <nav>
+    <h2>Maiar <span>Ghodbane</span></h2>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="index.html#projects">Projects</a>
+      <a href="index.html#skills">Skills</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+  </nav>
+
+  <section class="ai-hero">
+    <div class="ai-hero-text">
+      <p class="section-tag">COMPUTATIONAL DRUG DISCOVERY PROJECT</p>
+      <h1 class="ai-title">AI-Assisted Drug Discovery</h1>
+      <p class="ai-subtitle">
+        Predicting BACE1 inhibitor activity using cheminformatics, molecular descriptors,
+        ChEMBL bioactivity data and machine learning.
+      </p>
+      <a href="#workflow" class="btn primary">Explore Workflow</a>
+    </div>
+
+    <div class="ai-protein-panel">
+      <div id="bace1-viewer"></div>
+      <div class="molecule-label">
+        <strong>BACE1</strong>
+        <p>Drug target • Alzheimer’s disease • Inhibitor prediction</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="form-statement">
+    <h2>From biological data<br><span>to predictive models.</span></h2>
+    <p>
+      This project implemented a complete beginner-level QSAR workflow:
+      collecting BACE1 activity data from ChEMBL, processing molecular structures,
+      generating descriptors and training a Random Forest model to predict pIC50 values.
+    </p>
+  </section>
+
+  <section id="workflow" class="form-timeline">
+    <p class="section-tag">COMPUTATIONAL WORKFLOW</p>
+    <h2>Cheminformatics & Machine Learning Pipeline</h2>
+
+    <div class="ai-workflow-grid">
+      <div class="ai-card">
+        <img src="assets/ai/chembl.png" alt="ChEMBL database" />
+        <h3>ChEMBL Data Collection</h3>
+        <p>Retrieved BACE1 bioactivity data, including IC50 values and molecular structures.</p>
+      </div>
+
+      <div class="ai-card">
+        <div class="ai-number">01</div>
+        <h3>Data Preprocessing</h3>
+        <p>Cleaned missing values, removed duplicates, standardized IC50 values and calculated pIC50.</p>
+      </div>
+
+      <div class="ai-card">
+        <img src="assets/ai/rdkit.png" alt="RDKit descriptors" />
+        <h3>Lipinski & RDKit</h3>
+        <p>Calculated molecular weight, LogP, hydrogen bond donors and acceptors.</p>
+      </div>
+
+      <div class="ai-card">
+        <div class="ai-number">02</div>
+        <h3>Molecular Descriptors</h3>
+        <p>Generated molecular fingerprints and descriptors for machine learning model training.</p>
+      </div>
+
+      <div class="ai-card">
+        <img src="assets/ai/random-forest.png" alt="Random Forest model" />
+        <h3>Random Forest Model</h3>
+        <p>Trained a Random Forest regressor to predict compound activity against BACE1.</p>
+      </div>
+
+      <div class="ai-card special-card">
+        <h3>Prediction & Interpretation</h3>
+        <p>Evaluated model performance and explored descriptor importance for activity prediction.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="project-content">
+    <div class="project-box">
+      <h2>What I Did</h2>
+      <ul>
+        <li>Selected BACE1 as a therapeutic target for a beginner drug discovery workflow.</li>
+        <li>Collected bioactivity data from ChEMBL using the ChEMBL webresource client.</li>
+        <li>Cleaned and prepared IC50 datasets using Python and Pandas.</li>
+        <li>Converted IC50 values into pIC50 values for activity prediction.</li>
+        <li>Generated Lipinski descriptors using RDKit.</li>
+        <li>Generated molecular fingerprints and descriptors for machine learning.</li>
+        <li>Built and evaluated a Random Forest regression model.</li>
+      </ul>
+    </div>
+
+    <div class="project-box">
+      <h2>What I Can Do Independently</h2>
+      <ul>
+        <li>Retrieve compound bioactivity data from public databases such as ChEMBL.</li>
+        <li>Clean and preprocess molecular datasets using Python.</li>
+        <li>Calculate pIC50 values from IC50 measurements.</li>
+        <li>Generate basic molecular descriptors using RDKit.</li>
+        <li>Train and evaluate beginner-level machine learning models for QSAR tasks.</li>
+        <li>Interpret model metrics and feature importance.</li>
+      </ul>
+    </div>
+
+    <div class="project-box">
+      <h2>Skills Developed</h2>
+      <p>
+        Python • Pandas • NumPy • ChEMBL • RDKit • QSAR • Molecular descriptors •
+        Lipinski rules • Machine learning • Random Forest • Drug discovery • Data preprocessing
+      </p>
+    </div>
+
+    <a class="btn primary" href="index.html#projects">Back to Projects</a>
+  </section>
+
+  <script>
+    const baceViewer = $3Dmol.createViewer("bace1-viewer", {
+      backgroundColor: "rgba(255,255,255,0)"
+    });
+
+    fetch("assets/ai/bace1.pdb")
+      .then(response => response.text())
+      .then(data => {
+        baceViewer.addModel(data, "pdb");
+        baceViewer.setStyle({}, {});
+        baceViewer.setStyle({hetflag: false}, {
+          cartoon: {
+            color: "spectrum",
+            opacity: 0.95
+          }
+        });
+        baceViewer.setStyle({hetflag: true, not: {resn: "HOH"}}, {
+          stick: {
+            colorscheme: "greenCarbon",
+            radius: 0.25
+          }
+        });
+        baceViewer.zoomTo();
+        baceViewer.spin("y", 0.6);
+        baceViewer.render();
+      });
+
+    const canvas = document.getElementById("ai-network");
+    const ctx = canvas.getContext("2d");
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    let nodes = [];
+
+    for (let i = 0; i < 90; i++) {
+      nodes.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        vx: (Math.random() - 0.5) * 0.22,
+        vy: (Math.random() - 0.5) * 0.22,
+        r: Math.random() * 2 + 1
+      });
+    }
+
+    function animateNetwork() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      nodes.forEach((p, i) => {
+        p.x += p.vx;
+        p.y += p.vy;
+
+        if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+        if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = "#7c3aed";
+        ctx.fill();
+
+        for (let j = i + 1; j < nodes.length; j++) {
+          const q = nodes[j];
+          const dx = p.x - q.x;
+          const dy = p.y - q.y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+
+          if (dist < 130) {
+            ctx.beginPath();
+            ctx.moveTo(p.x, p.y);
+            ctx.lineTo(q.x, q.y);
+            ctx.strokeStyle = `rgba(124,58,237,${0.17 * (1 - dist / 130)})`;
+            ctx.stroke();
+          }
+        }
+      });
+
+      requestAnimationFrame(animateNetwork);
+    }
+
+    animateNetwork();
+
+    window.addEventListener("resize", () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    });
+  </script>
+</body>
+</html>
