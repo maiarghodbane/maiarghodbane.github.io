@@ -132,23 +132,26 @@
         dexViewer.render();
       });
 
-    const dex2DViewer = $3Dmol.createViewer("dex-2d-viewer", {
-      backgroundColor: "rgba(255,255,255,0)"
-    });
+   <script>
+  const dex2DViewer = $3Dmol.createViewer("dex-2d-viewer", {
+    backgroundColor: "rgba(255,255,255,0)"
+  });
 
-    fetch("assets/formulation/dexchlorpheniramine-2d.sdf")
-      .then(response => response.text())
-      .then(data => {
-        dex2DViewer.addModel(data, "sdf");
-        dex2DViewer.setStyle({}, {
-          stick: {
-            colorscheme: "greenCarbon",
-            radius: 0.18
-          }
-        });
-        dex2DViewer.zoomTo();
-        dex2DViewer.render();
+  fetch("assets/formulation/dexchlorpheniramine-2d.sdf")
+    .then(response => response.text())
+    .then(data => {
+      dex2DViewer.addModel(data, "sdf");
+      dex2DViewer.setStyle({}, {
+        stick: {
+          colorscheme: "greenCarbon",
+          radius: 0.12
+        }
       });
-  </script>
+
+      dex2DViewer.zoomTo();
+      dex2DViewer.zoom(0.65);
+      dex2DViewer.render();
+    });
+</script>
 </body>
 </html>
