@@ -65,27 +65,31 @@ let viewer = $3Dmol.createViewer("protein-viewer", {
 fetch("assets/1HVR.pdb")
   .then(response => response.text())
   .then(data => {
-    viewer.addModel(data, "pdb");
+    let model = viewer.addModel(data, "pdb");
 
     // Hide everything first
     viewer.setStyle({}, {});
 
-    // Protein cartoon representation
-    viewer.setStyle({polymer: true}, {
+    // Protein cartoon
+    viewer.setStyle({resn: ["ALA","ARG","ASN","ASP","CYS","GLN","GLU","GLY","HIS","ILE","LEU","LYS","MET","PHE","PRO","SER","THR","TRP","TYR","VAL"]}, {
       cartoon: {
-        color: "spectrum",
+        color: "teal",
         opacity: 0.95
       }
     });
 
-    // Ligands in sticks, excluding water
+    // Ligand in sticks, excluding water and ions
     viewer.setStyle({hetflag: true, not: {resn: "HOH"}}, {
       stick: {
         colorscheme: "greenCarbon",
-        radius: 0.28
+        radius: 0.3
       }
     });
 
+    viewer.zoomTo();
+    viewer.spin("y", 0.7);
+    viewer.render();
+  });
     viewer.zoomTo();
     viewer.spin("y", 0.7);
     viewer.render();
