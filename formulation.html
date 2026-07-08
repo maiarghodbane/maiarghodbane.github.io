@@ -19,65 +19,73 @@
     </div>
   </nav>
 
-  <section class="formulation-hero">
-    <div>
+  <section class="form-hero">
+    <div class="form-hero-text">
       <p class="section-tag">PHARMACEUTICAL R&D PROJECT</p>
-      <h1 class="formulation-title">Topical Antihistamine Drug Repurposing</h1>
-      <p class="project-intro">
-        From industrial production and quality control of HISTAGAN® syrup to the development of a topical formulation
-        based on dexchlorpheniramine maleate for atopic dermatitis.
+      <h1 class="form-title">Topical Antihistamine Drug Repurposing</h1>
+      <p class="form-subtitle">
+        Transforming an oral antihistamine syrup into a topical therapeutic strategy for atopic dermatitis.
       </p>
-      <a class="btn primary" href="#story">Explore Project</a>
+      <a href="#story" class="btn primary">Explore Project</a>
     </div>
 
-    <div class="molecule-panel">
+    <div class="form-molecule">
       <div id="dex-viewer"></div>
-      <div class="molecule-card">
+      <div class="molecule-label">
         <strong>Dexchlorpheniramine Maleate</strong>
-        <p>Antihistamine • Drug repurposing • Topical formulation</p>
+        <p>H1 antihistamine • Drug repurposing • Topical formulation</p>
       </div>
     </div>
   </section>
 
-  <section id="story" class="projects">
-    <p class="section-tag">SCIENTIFIC STORY</p>
-    <h2>From Oral Syrup to Topical Therapy</h2>
+  <section id="story" class="form-statement">
+    <h2>One active pharmaceutical ingredient.<br><span>Two therapeutic strategies.</span></h2>
+    <p>
+      This project explored whether dexchlorpheniramine maleate, originally used in HISTAGAN® oral syrup,
+      could be reformulated into a topical dosage form to locally target symptoms of atopic dermatitis.
+    </p>
+  </section>
 
-    <div class="story-grid">
-      <div class="story-card">
-        <img src="assets/formulation/production.png" alt="Industrial production">
+  <section class="form-timeline">
+    <p class="section-tag">PROJECT STORY</p>
+    <h2>From Industrial Production to Therapeutic Evaluation</h2>
+
+    <div class="timeline-grid">
+      <div class="timeline-card">
+        <img src="assets/formulation/production.png" alt="Industrial production" />
         <h3>Industrial Production</h3>
-        <p>I followed the industrial manufacturing process of HISTAGAN® syrup at SAIDAL.</p>
+        <p>Followed the manufacturing workflow of HISTAGAN® syrup in an industrial pharmaceutical environment.</p>
       </div>
 
-      <div class="story-card">
-        <img src="assets/formulation/hplc.png" alt="HPLC quality control">
+      <div class="timeline-card">
+        <img src="assets/formulation/hplc.png" alt="HPLC quality control" />
         <h3>Quality Control</h3>
-        <p>Physicochemical and microbiological quality control, including HPLC-based analytical evaluation.</p>
+        <p>Performed physicochemical and microbiological controls, including HPLC-based analytical evaluation.</p>
       </div>
 
-      <div class="story-card">
-        <div id="dex-2d-viewer"></div>
-        <h3>Research Idea</h3>
-        <p>Repurposing the same active ingredient from oral administration to a topical dosage form.</p>
+      <div class="timeline-card special-card">
+        <h3>Research Question</h3>
+        <p>
+          Can the same active pharmaceutical ingredient be reformulated into a topical dosage form
+          for local treatment of atopic dermatitis?
+        </p>
       </div>
 
-      <div class="story-card">
-        <img src="assets/formulation/in-vivo.png" alt="In vivo evaluation">
+      <div class="timeline-card">
+        <img src="assets/formulation/in-vivo.png" alt="In vivo evaluation" />
         <h3>In Vivo Evaluation</h3>
-        <p>Evaluation in a DNCB-induced atopic dermatitis model using lesion scoring and scratching behaviour.</p>
+        <p>Evaluated the topical formulation in a DNCB-induced atopic dermatitis model.</p>
       </div>
     </div>
   </section>
 
   <section class="project-content">
-
     <div class="project-box">
       <h2>What I Did</h2>
       <ul>
         <li>Followed the industrial manufacturing process of HISTAGAN® syrup.</li>
         <li>Performed quality control of a commercial oral antihistamine formulation.</li>
-        <li>Used analytical and quality control methods including HPLC, IR, pH, density and microbiological testing.</li>
+        <li>Used analytical and QC methods including HPLC, IR, pH, density and microbiological testing.</li>
         <li>Proposed the development of a topical formulation using dexchlorpheniramine maleate.</li>
         <li>Designed the formulation strategy and selected pharmaceutical excipients.</li>
         <li>Prepared the ointment and performed physicochemical and microbiological controls.</li>
@@ -119,39 +127,13 @@
       .then(data => {
         dexViewer.addModel(data, "sdf");
         dexViewer.setStyle({}, {
-          stick: {
-            colorscheme: "greenCarbon",
-            radius: 0.22
-          },
-          sphere: {
-            scale: 0.22
-          }
+          stick: { colorscheme: "greenCarbon", radius: 0.22 },
+          sphere: { scale: 0.24 }
         });
         dexViewer.zoomTo();
-        dexViewer.spin("y", 0.8);
+        dexViewer.spin("y", 0.7);
         dexViewer.render();
       });
-
-   <script>
-  const dex2DViewer = $3Dmol.createViewer("dex-2d-viewer", {
-    backgroundColor: "rgba(255,255,255,0)"
-  });
-
-  fetch("assets/formulation/dexchlorpheniramine-2d.sdf")
-    .then(response => response.text())
-    .then(data => {
-      dex2DViewer.addModel(data, "sdf");
-      dex2DViewer.setStyle({}, {
-        stick: {
-          colorscheme: "greenCarbon",
-          radius: 0.12
-        }
-      });
-
-      dex2DViewer.zoomTo();
-      dex2DViewer.zoom(0.65);
-      dex2DViewer.render();
-    });
-</script>
+  </script>
 </body>
 </html>
