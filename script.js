@@ -62,10 +62,10 @@ let viewer = $3Dmol.createViewer("protein-viewer", {
   backgroundColor: "rgba(255,255,255,0)"
 });
 
-fetch("assets/protein.pdb")
+fetch("assets/protein.cif")
   .then(response => response.text())
   .then(data => {
-    viewer.addModel(data, "pdb");
+    viewer.addModel(data, "cif");
 
     viewer.setStyle({protein: true}, {
       cartoon: {
