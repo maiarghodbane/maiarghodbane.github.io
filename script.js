@@ -6,12 +6,12 @@ canvas.height = window.innerHeight;
 
 let particles = [];
 
-for (let i = 0; i < 80; i++) {
+for (let i = 0; i < 70; i++) {
   particles.push({
     x: Math.random() * canvas.width,
     y: Math.random() * canvas.height,
-    vx: (Math.random() - 0.5) * 0.6,
-    vy: (Math.random() - 0.5) * 0.6,
+    vx: (Math.random() - 0.5) * 0.35,
+    vy: (Math.random() - 0.5) * 0.35,
     r: Math.random() * 2 + 1
   });
 }
@@ -28,7 +28,7 @@ function animate() {
 
     ctx.beginPath();
     ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-    ctx.fillStyle = "#64ffda";
+    ctx.fillStyle = "#00a6a6";
     ctx.fill();
 
     for (let j = i + 1; j < particles.length; j++) {
@@ -41,7 +41,7 @@ function animate() {
         ctx.beginPath();
         ctx.moveTo(p.x, p.y);
         ctx.lineTo(q.x, q.y);
-        ctx.strokeStyle = `rgba(100,255,218,${1 - dist / 120})`;
+        ctx.strokeStyle = `rgba(0,166,166,${0.28 * (1 - dist / 120)})`;
         ctx.stroke();
       }
     }
