@@ -6,8 +6,8 @@
 
 body {
   font-family: Arial, sans-serif;
-  background: #050816;
-  color: #ffffff;
+  background: linear-gradient(135deg, #f7fbff, #eef7ff);
+  color: #102033;
   overflow-x: hidden;
 }
 
@@ -23,39 +23,51 @@ body {
 nav {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 30px 8%;
+  position: relative;
+  z-index: 2;
+}
+
+nav h2 {
+  color: #102033;
 }
 
 nav a {
-  color: #c9d6ff;
+  color: #1b4d6b;
   margin-left: 25px;
   text-decoration: none;
+  font-weight: 600;
 }
 
 .hero {
   min-height: 100vh;
+  position: relative;
 }
 
 .hero-content {
-  padding: 18vh 8%;
-  max-width: 900px;
+  padding: 16vh 8%;
+  max-width: 950px;
+  position: relative;
+  z-index: 2;
 }
 
 .tag {
-  color: #64ffda;
+  color: #00a6a6;
   font-weight: bold;
   margin-bottom: 20px;
 }
 
 h1 {
-  font-size: 55px;
-  line-height: 1.1;
+  font-size: 54px;
+  line-height: 1.08;
   margin-bottom: 25px;
+  color: #102033;
 }
 
 .intro {
   font-size: 20px;
-  color: #c9d6ff;
+  color: #425466;
   max-width: 700px;
 }
 
@@ -68,26 +80,37 @@ h1 {
   border-radius: 30px;
   text-decoration: none;
   margin-right: 15px;
+  font-weight: 600;
+  display: inline-block;
 }
 
 .primary {
-  background: #64ffda;
-  color: #050816;
+  background: #00d1b2;
+  color: white;
+  box-shadow: 0 10px 25px rgba(0, 209, 178, 0.25);
 }
 
 .secondary {
-  border: 1px solid #64ffda;
-  color: #64ffda;
+  border: 1px solid #00a6a6;
+  color: #00a6a6;
 }
 
 .section {
   padding: 90px 8%;
+  position: relative;
+  z-index: 2;
 }
 
 .section h2 {
   font-size: 35px;
   margin-bottom: 30px;
-  color: #64ffda;
+  color: #005f73;
+}
+
+.section p {
+  color: #425466;
+  line-height: 1.7;
+  font-size: 17px;
 }
 
 .cards {
@@ -97,25 +120,23 @@ h1 {
 }
 
 .card, .skills div {
-  background: rgba(255, 255, 255, 0.08);
-  padding: 25px;
-  border-radius: 20px;
-  backdrop-filter: blur(10px);
-  transition: transform 0.3s ease, background 0.3s ease;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 28px;
+  border-radius: 24px;
+  border: 1px solid rgba(0, 166, 166, 0.15);
+  box-shadow: 0 20px 45px rgba(16, 32, 51, 0.08);
+  backdrop-filter: blur(14px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover, .skills div:hover {
-  transform: translateY(-10px);
-  background: rgba(100, 255, 218, 0.12);
+  transform: translateY(-12px);
+  box-shadow: 0 25px 60px rgba(0, 166, 166, 0.18);
 }
 
 .card h3, .skills h3 {
+  color: #102033;
   margin-bottom: 15px;
-}
-
-.card p, .section p {
-  color: #c9d6ff;
-  line-height: 1.6;
 }
 
 .skills {
@@ -126,4 +147,37 @@ h1 {
 
 .contact {
   padding-bottom: 120px;
+}
+
+/* Floating scientific shapes */
+.hero::after {
+  content: "";
+  position: absolute;
+  right: 8%;
+  top: 18%;
+  width: 360px;
+  height: 360px;
+  background: radial-gradient(circle, rgba(0,209,178,0.18), transparent 65%);
+  border-radius: 50%;
+  animation: float 6s ease-in-out infinite;
+}
+
+.hero::before {
+  content: "α-helix   β-sheet   ligand   protein   DNA";
+  position: absolute;
+  right: 7%;
+  bottom: 15%;
+  color: rgba(0, 95, 115, 0.18);
+  font-size: 24px;
+  letter-spacing: 4px;
+  transform: rotate(-12deg);
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-25px);
+  }
 }
