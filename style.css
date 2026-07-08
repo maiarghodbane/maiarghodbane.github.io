@@ -19,6 +19,7 @@ body {
   z-index: -2;
 }
 
+/* NAVBAR */
 nav {
   position: fixed;
   top: 0;
@@ -48,6 +49,7 @@ nav h2 span { color: #00a99d; }
 
 .nav-links a:hover { color: #00a99d; }
 
+/* HERO */
 .hero {
   min-height: 100vh;
   padding: 120px 8% 70px;
@@ -119,6 +121,7 @@ h1 span {
 
 .btn:hover { transform: translateY(-4px); }
 
+/* 3D PROTEIN */
 .hero-visual {
   position: relative;
   display: flex;
@@ -162,6 +165,7 @@ h1 span {
   50% { transform: translateY(14px); }
 }
 
+/* COMMON SECTIONS */
 .about, .projects, .skills-section, .contact {
   margin: 40px 5%;
   padding: 70px 7%;
@@ -171,6 +175,14 @@ h1 span {
   backdrop-filter: blur(18px);
 }
 
+h2 {
+  font-size: 38px;
+  margin-bottom: 24px;
+}
+
+h2 span { color: #00a99d; }
+
+/* ABOUT */
 .about {
   display: grid;
   grid-template-columns: 0.8fr 1.2fr;
@@ -184,13 +196,6 @@ h1 span {
   border: 2px solid #00a99d;
   box-shadow: 0 24px 50px rgba(0,169,157,0.18);
 }
-
-h2 {
-  font-size: 38px;
-  margin-bottom: 24px;
-}
-
-h2 span { color: #00a99d; }
 
 .about-text p, .project-card p, .skill-box p, .contact p {
   color: #3f5368;
@@ -213,33 +218,55 @@ h2 span { color: #00a99d; }
   font-weight: 700;
 }
 
-.project-grid, .skills-grid {
+/* PROJECT CARDS SIDE BY SIDE */
+.project-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 28px;
+  align-items: stretch;
 }
 
-.project-card, .skill-box {
+.project-card {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
   background: white;
-  border-radius: 24px;
+  border-radius: 26px;
   overflow: hidden;
   box-shadow: 0 18px 45px rgba(7,29,53,0.08);
-  transition: 0.3s;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
-.project-card:hover, .skill-box:hover {
-  transform: translateY(-10px);
+.project-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 30px 70px rgba(7,29,53,0.13);
 }
 
 .project-card img {
   width: 100%;
-  height: 180px;
+  height: 210px;
   object-fit: cover;
+  transition: transform 0.5s ease;
 }
 
-.project-card div, .skill-box { padding: 24px; }
+.project-card:hover img {
+  transform: scale(1.06);
+}
 
-.project-card h3, .skill-box h3 { margin-bottom: 14px; }
+.project-card div {
+  padding: 24px;
+}
+
+.project-card h3 {
+  margin-bottom: 14px;
+  color: #071d35;
+}
+
+.project-card:hover h3 {
+  color: #00a99d;
+}
 
 .project-card span {
   display: inline-block;
@@ -252,14 +279,33 @@ h2 span { color: #00a99d; }
   font-weight: 700;
 }
 
-.contact { margin-bottom: 80px; }
-
-@media (max-width: 900px) {
-  .hero, .about { grid-template-columns: 1fr; }
-  .nav-links { display: none; }
-  #protein-viewer { height: 430px; }
+/* SKILLS */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 28px;
 }
 
+.skill-box {
+  background: white;
+  border-radius: 24px;
+  padding: 28px;
+  box-shadow: 0 18px 45px rgba(7,29,53,0.08);
+  transition: 0.3s;
+}
+
+.skill-box:hover {
+  transform: translateY(-10px);
+}
+
+.skill-box h3 {
+  margin-bottom: 14px;
+}
+
+/* CONTACT */
+.contact { margin-bottom: 80px; }
+
+/* NUCLEOSOME PROJECT PAGE */
 .project-page {
   padding: 130px 6% 80px;
 }
@@ -325,17 +371,27 @@ h2 span { color: #00a99d; }
   margin-left: 22px;
 }
 
+/* RESPONSIVE */
 @media (max-width: 900px) {
-  .project-header {
+  .hero, .about, .project-header {
     grid-template-columns: 1fr;
   }
 
-  #nucleosome-viewer {
-    height: 420px;
+  .nav-links {
+    display: none;
   }
-}
-.project-card {
-  text-decoration: none;
-  color: inherit;
-  cursor: pointer;
+
+  #protein-viewer,
+  #nucleosome-viewer {
+    height: 430px;
+  }
+
+  h1 {
+    font-size: 72px;
+  }
+
+  .keywords {
+    font-size: 16px;
+    letter-spacing: 3px;
+  }
 }
