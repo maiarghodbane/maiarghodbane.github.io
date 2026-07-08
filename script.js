@@ -62,10 +62,10 @@ let viewer = $3Dmol.createViewer("protein-viewer", {
   backgroundColor: "rgba(255,255,255,0)"
 });
 
-fetch("assets/protein.cif")
+fetch("assets/1HVR.pdb")
   .then(response => response.text())
   .then(data => {
-    viewer.addModel(data, "cif");
+    viewer.addModel(data, "pdb");
 
     // Hide everything first
     viewer.setStyle({}, {});
