@@ -334,3 +334,8 @@ h2 span { color: #00a99d; }
     height: 420px;
   }
 }
+.project-card {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
