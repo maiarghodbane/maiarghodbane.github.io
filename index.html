@@ -89,41 +89,137 @@
     </div>
   </section>
 
-  <section id="projects" class="projects">
-  <p class="section-tag">RESEARCH HIGHLIGHTS</p>
-  <h2>Selected Projects</h2>
+  <section id="projects" class="projects projects-3d-section">
 
-  <div class="project-grid">
+  <div class="projects-heading">
+    <p class="section-tag">RESEARCH HIGHLIGHTS</p>
+    <h2>Selected Projects</h2>
 
-    <a href="nucleosome.html" class="project-card">
-      <img src="assets/vmdscene.png" alt="Nucleosome molecular dynamics" />
-      <div>
+    <p>
+      Explore three projects connecting structural biology,
+      pharmaceutical development and AI-assisted drug discovery.
+    </p>
+  </div>
+
+  <div class="project-grid project-grid-3d">
+
+    <!-- NUCLEOSOME PROJECT -->
+    <a href="nucleosome.html" class="project-card project-card-3d">
+
+      <div class="project-viewer-wrap nucleosome-project-visual">
+        <div
+          id="home-nucleosome-viewer"
+          class="project-3d-viewer"
+          aria-label="Interactive three-dimensional nucleosome structure">
+        </div>
+
+        <span class="viewer-hint">Drag to rotate</span>
+      </div>
+
+      <div class="project-card-content">
+        <div class="project-card-topline">
+          <span class="project-domain molecular-domain">
+            Structural Biology
+          </span>
+
+          <span class="project-arrow">↗</span>
+        </div>
+
         <h3>Molecular Dynamics of Nucleosome 1KX5</h3>
-        <p>Investigating histone modifications and nucleosome dynamics using AMBER, CPPTRAJ and Python.</p>
-        <span>Molecular Dynamics</span>
+
+        <p>
+          Investigating histone modifications and nucleosome dynamics
+          using AMBER, CPPTRAJ and Python.
+        </p>
+
+        <div class="project-tech-list">
+          <span>AMBER</span>
+          <span>CPPTRAJ</span>
+          <span>Python</span>
+        </div>
       </div>
+
     </a>
 
-    <a href="ai-drug-discovery.html" class="project-card">
-      <img src="assets/ai/ai-drug-discovery.png" alt="AI-assisted drug discovery" />
-      <div>
+    <!-- AI PROJECT -->
+    <a href="ai-drug-discovery.html" class="project-card project-card-3d">
+
+      <div class="project-viewer-wrap ai-project-visual">
+        <div
+          id="home-bace1-viewer"
+          class="project-3d-viewer"
+          aria-label="Interactive three-dimensional BACE1 protein structure">
+        </div>
+
+        <span class="viewer-hint">Drag to rotate</span>
+      </div>
+
+      <div class="project-card-content">
+        <div class="project-card-topline">
+          <span class="project-domain ai-domain">
+            AI Drug Discovery
+          </span>
+
+          <span class="project-arrow">↗</span>
+        </div>
+
         <h3>AI-Assisted Drug Discovery</h3>
-        <p>Cheminformatics and machine learning workflow for predicting BACE1 inhibitor activity using ChEMBL, RDKit and Random Forest.</p>
-        <span>AI Drug Discovery</span>
+
+        <p>
+          Predicting BACE1 inhibitor activity using ChEMBL,
+          RDKit, molecular descriptors and Random Forest.
+        </p>
+
+        <div class="project-tech-list">
+          <span>ChEMBL</span>
+          <span>RDKit</span>
+          <span>Machine Learning</span>
+        </div>
       </div>
+
     </a>
 
-    <a href="formulation.html" class="project-card">
-      <img src="assets/pharm.webp" alt="Topical formulation project" />
-      <div>
-        <h3>Topical Antihistamine Drug Repurposing</h3>
-        <p>From industrial production of HISTAGAN® syrup to topical formulation development and in vivo evaluation.</p>
-        <span>Pharmaceutical R&D</span>
+    <!-- FORMULATION PROJECT -->
+    <a href="formulation.html" class="project-card project-card-3d">
+
+      <div class="project-viewer-wrap formulation-project-visual">
+        <div
+          id="home-dex-viewer"
+          class="project-3d-viewer"
+          aria-label="Interactive three-dimensional dexchlorpheniramine structure">
+        </div>
+
+        <span class="viewer-hint">Drag to rotate</span>
       </div>
+
+      <div class="project-card-content">
+        <div class="project-card-topline">
+          <span class="project-domain pharma-domain">
+            Pharmaceutical R&amp;D
+          </span>
+
+          <span class="project-arrow">↗</span>
+        </div>
+
+        <h3>Topical Antihistamine Drug Repurposing</h3>
+
+        <p>
+          From industrial production of HISTAGAN® syrup to topical
+          formulation development and in vivo evaluation.
+        </p>
+
+        <div class="project-tech-list">
+          <span>HPLC</span>
+          <span>Formulation</span>
+          <span>In Vivo</span>
+        </div>
+      </div>
+
     </a>
-    
-    </div>
-  </section>
+
+  </div>
+
+</section>
 
   <section id="skills" class="expertise-section">
 
