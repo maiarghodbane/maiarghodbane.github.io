@@ -1444,3 +1444,10 @@ h2 span { color: #00a99d; }
   font-size: 18px;
   line-height: 1.8;
 }
+.toolkit-section .section-tag {
+  margin-bottom: 22px;
+}
+
+.flip-toolkit-grid {
+  margin-top: 10px;
+}
