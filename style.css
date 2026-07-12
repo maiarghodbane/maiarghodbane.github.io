@@ -2081,3 +2081,122 @@ transform:translateY(-15px);
 }
 
 }
+/* FINAL PROFILE IMAGE FIX */
+
+.photo-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1500px;
+}
+
+.profile-card {
+  position: relative;
+  width: 360px;
+  height: 360px;
+  transform-style: preserve-3d;
+  transition: transform 0.8s ease;
+  animation: floatPhoto 5s ease-in-out infinite;
+}
+
+.photo-card:hover .profile-card {
+  transform: rotateY(180deg);
+}
+
+.profile-front,
+.profile-back {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 50%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.profile-front {
+  border: 4px solid #00a99d;
+  background: #ffffff;
+  box-shadow:
+    0 0 45px rgba(0, 169, 157, 0.18),
+    0 25px 70px rgba(0, 169, 157, 0.18);
+}
+
+.photo-card .profile-front img {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  object-fit: cover;
+  object-position: center 35%;
+  box-shadow: none;
+}
+
+.profile-back {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  padding: 35px;
+  color: white;
+  text-align: center;
+  transform: rotateY(180deg);
+  background: linear-gradient(135deg, #00a99d, #29d6c8);
+  box-shadow:
+    0 0 45px rgba(0, 169, 157, 0.18),
+    0 25px 70px rgba(0, 169, 157, 0.18);
+}
+
+.profile-back h3 {
+  margin: 0;
+  font-size: 27px;
+}
+
+.profile-back p {
+  margin: 0 0 10px;
+  color: rgba(255, 255, 255, 0.92);
+  line-height: 1.5;
+}
+
+.profile-links {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.profile-links a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.disabled-link {
+  opacity: 0.65;
+  pointer-events: none;
+}
+
+@keyframes floatPhoto {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+
+  50% {
+    translate: 0 -14px;
+  }
+}
+
+@media (max-width: 600px) {
+  .profile-card {
+    width: 285px;
+    height: 285px;
+  }
+}
