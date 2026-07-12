@@ -246,7 +246,7 @@ function initializeNucleosomeCard() {
       );
 
       viewer.zoomTo();
-      viewer.zoom(0.72);
+      viewer.zoom(0.95);
       viewer.render();
       viewer.spin("y", 0.25);
 
@@ -315,7 +315,7 @@ function initializeBace1Card() {
       );
 
       viewer.zoomTo();
-      viewer.zoom(0.78);
+      viewer.zoom(1.05);
       viewer.render();
       viewer.spin("y", 0.3);
 
@@ -371,7 +371,7 @@ function initializeDexCard() {
       );
 
       viewer.zoomTo();
-      viewer.zoom(0.7);
+      viewer.zoom(1.25);
       viewer.render();
       viewer.spin("y", 0.5);
 
