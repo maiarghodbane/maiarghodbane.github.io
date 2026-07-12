@@ -1873,3 +1873,211 @@ h2 span { color: #00a99d; }
     color:#516274;
 
 }
+/*==================================================
+PROFILE CARD
+==================================================*/
+
+.photo-card{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    perspective:1500px;
+
+}
+
+.profile-card{
+
+    width:360px;
+
+    height:360px;
+
+    position:relative;
+
+    transform-style:preserve-3d;
+
+    transition:0.8s;
+
+    animation:floatPhoto 5s ease-in-out infinite;
+
+}
+
+.photo-card:hover .profile-card{
+
+    transform:rotateY(180deg);
+
+}
+
+/*===================*/
+
+.profile-front,
+.profile-back{
+
+    position:absolute;
+
+    inset:0;
+
+    border-radius:50%;
+
+    overflow:hidden;
+
+    backface-visibility:hidden;
+
+}
+
+/*===================*/
+
+.profile-front{
+
+    border:4px solid #00a99d;
+
+    background:white;
+
+    box-shadow:
+
+        0 0 45px rgba(0,169,157,.18),
+
+        0 25px 70px rgba(0,169,157,.18);
+
+}
+
+.profile-front img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+}
+
+/*===================*/
+
+.profile-back{
+
+    transform:rotateY(180deg);
+
+    background:
+
+    linear-gradient(
+
+    135deg,
+
+    #00a99d,
+
+    #1bc8bc,
+
+    #53e5d5
+
+    );
+
+    color:white;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:35px;
+
+    box-shadow:
+
+        0 0 45px rgba(0,169,157,.18),
+
+        0 25px 70px rgba(0,169,157,.18);
+
+}
+
+.profile-back h3{
+
+    font-size:30px;
+
+    margin-bottom:10px;
+
+}
+
+.profile-back p{
+
+    font-size:17px;
+
+    line-height:1.6;
+
+    margin-bottom:25px;
+
+    opacity:.95;
+
+}
+
+/*===================*/
+
+.profile-links{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+}
+
+.profile-links a{
+
+    color:white;
+
+    text-decoration:none;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    transition:.3s;
+
+}
+
+.profile-links a:hover{
+
+    transform:translateX(6px);
+
+}
+
+.disabled-link{
+
+    opacity:.65;
+
+    cursor:default;
+
+    pointer-events:none;
+
+}
+
+/*===================*/
+
+@keyframes floatPhoto{
+
+0%,100%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-15px);
+
+}
+
+}
