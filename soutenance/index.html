@@ -1,1 +1,187 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
 
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Soutenance — Ghodbane Maiar</title>
+
+  <!-- Reveal.js -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/dist/reveal.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/dist/theme/white.css"
+  >
+
+  <!-- Notre style -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- NGL : visualisation moléculaire -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/ngl@2.0.0-dev.39/dist/ngl.js">
+  </script>
+</head>
+
+<body>
+
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- ======================================= -->
+      <!-- SLIDE 1 : PAGE DE GARDE                 -->
+      <!-- ======================================= -->
+
+      <section class="cover-slide">
+
+        <!-- Logos -->
+        <header class="logos-row">
+
+          <div class="logo-container">
+            <img
+              src="logos/universite.png"
+              alt="Logo de l'université"
+            >
+          </div>
+
+          <div class="logo-container">
+            <img
+              src="logos/faculte.png"
+              alt="Logo de la faculté"
+            >
+          </div>
+
+          <div class="logo-container no-border">
+            <img
+              src="logos/laboratoire.png"
+              alt="Logo du laboratoire"
+            >
+          </div>
+
+        </header>
+
+        <!-- Contenu principal -->
+        <main class="cover-content">
+
+          <!-- Nucléosome interactif -->
+          <div class="molecule-column">
+
+            <div id="nucleosome-viewer"></div>
+
+            <p id="viewer-message">
+              Chargement de la structure…
+            </p>
+
+          </div>
+
+          <!-- Texte -->
+          <div class="text-column">
+
+            <h1 class="main-title">
+              Impact des modifications
+              post-traductionnelles des histones
+              sur la dynamique du nucléosome
+              par dynamique moléculaire
+            </h1>
+
+            <div class="title-divider">
+              <span></span>
+            </div>
+
+            <p class="small-label">
+              Présenté par
+            </p>
+
+            <p class="student-name">
+              Ghodbane Maiar
+            </p>
+
+            <div class="red-line"></div>
+
+            <p class="master-title">
+              Master Sciences du Vivant 2025–2026
+            </p>
+
+            <p class="speciality">
+              Biochimie, Biologie Moléculaire
+              &amp; Régulations Cellulaires
+            </p>
+
+            <p class="small-label supervisors-label">
+              Sous la direction de
+            </p>
+
+            <p class="supervisors">
+              Emmanuelle Bignon
+              <span class="ampersand">&amp;</span>
+              Yiya Qiu
+            </p>
+
+          </div>
+
+        </main>
+
+        <!-- Décoration discrète en bas -->
+        <svg
+          class="bottom-waves"
+          viewBox="0 0 1600 130"
+          preserveAspectRatio="none"
+          aria-hidden="true"
+        >
+          <path
+            d="M0,72 C250,130 430,10 710,72
+               C990,134 1160,28 1600,76"
+          />
+
+          <path
+            d="M0,91 C260,149 440,29 720,91
+               C1000,153 1170,47 1600,95"
+          />
+
+          <path
+            d="M0,109 C270,167 450,47 730,109
+               C1010,171 1180,65 1600,113"
+          />
+        </svg>
+
+      </section>
+
+    </div>
+  </div>
+
+  <!-- Reveal.js -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/dist/reveal.js">
+  </script>
+
+  <!-- Configuration de la présentation -->
+  <script>
+    Reveal.initialize({
+      hash: true,
+      controls: true,
+      progress: true,
+      slideNumber: true,
+
+      transition: "fade",
+      backgroundTransition: "fade",
+
+      width: 1600,
+      height: 900,
+
+      margin: 0,
+      center: false
+    });
+  </script>
+
+  <!-- Chargement du nucléosome -->
+  <script src="js/nucleosome.js"></script>
+
+</body>
+</html>
