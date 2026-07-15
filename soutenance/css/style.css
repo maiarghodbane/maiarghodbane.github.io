@@ -1,1 +1,391 @@
+/* ==========================================
+   COULEURS GÉNÉRALES
+   ========================================== */
 
+:root {
+  --navy: #071b55;
+  --red: #d52620;
+  --text-grey: #30333a;
+  --soft-blue: #90a8d8;
+  --white: #ffffff;
+}
+
+
+/* ==========================================
+   CONFIGURATION GÉNÉRALE
+   ========================================== */
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background: var(--white);
+}
+
+body {
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.reveal {
+  background: var(--white);
+}
+
+.reveal .slides {
+  text-align: initial;
+}
+
+.reveal .slides section {
+  width: 100%;
+  height: 100%;
+
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/* ==========================================
+   PAGE DE GARDE
+   ========================================== */
+
+.cover-slide {
+  position: relative;
+
+  display: grid;
+  grid-template-rows: 115px 1fr;
+
+  width: 100%;
+  height: 100%;
+
+  padding: 22px 52px 34px;
+  box-sizing: border-box;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 25% 72%,
+      #f2f6fa 0%,
+      #ffffff 43%
+    );
+}
+
+
+/* ==========================================
+   LOGOS
+   ========================================== */
+
+.logos-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+
+  align-items: center;
+
+  width: 100%;
+  height: 100%;
+}
+
+.logo-container {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  height: 88px;
+
+  padding: 0 28px;
+  box-sizing: border-box;
+
+  border-right: 2px solid rgba(7, 27, 85, 0.35);
+}
+
+.logo-container.no-border {
+  border-right: none;
+}
+
+.logo-container img {
+  display: block;
+
+  max-width: 100%;
+  max-height: 82px;
+
+  object-fit: contain;
+}
+
+
+/* ==========================================
+   ORGANISATION PRINCIPALE
+   ========================================== */
+
+.cover-content {
+  display: grid;
+  grid-template-columns: 48% 52%;
+
+  align-items: center;
+
+  width: 100%;
+  height: 100%;
+}
+
+
+/* ==========================================
+   COLONNE MOLÉCULE
+   ========================================== */
+
+.molecule-column {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 100%;
+}
+
+#nucleosome-viewer {
+  width: 100%;
+  height: 690px;
+
+  background: transparent;
+
+  border-radius: 18px;
+
+  overflow: hidden;
+
+  filter:
+    drop-shadow(
+      0 17px 17px rgba(7, 27, 85, 0.13)
+    );
+}
+
+/*
+ NGL ajoute parfois un canvas avec un fond.
+ On le force à rester propre.
+*/
+
+#nucleosome-viewer canvas {
+  outline: none;
+}
+
+#viewer-message {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-50%, -50%);
+
+  margin: 0;
+
+  color: rgba(7, 27, 85, 0.55);
+
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+
+  text-align: center;
+}
+
+
+/* ==========================================
+   COLONNE TEXTE
+   ========================================== */
+
+.text-column {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  height: 100%;
+
+  padding: 10px 34px 18px 48px;
+  box-sizing: border-box;
+
+  text-align: center;
+}
+
+.main-title {
+  max-width: 770px;
+
+  margin: 0 0 30px;
+
+  color: var(--navy);
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 42px;
+  font-weight: 700;
+
+  line-height: 1.2;
+  letter-spacing: -0.4px;
+}
+
+
+/* ==========================================
+   SÉPARATEUR DU TITRE
+   ========================================== */
+
+.title-divider {
+  position: relative;
+
+  width: 78%;
+  height: 16px;
+
+  margin: 0 auto 21px;
+}
+
+.title-divider::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  top: 7px;
+
+  height: 2px;
+
+  background: var(--navy);
+}
+
+.title-divider span {
+  position: absolute;
+
+  left: 50%;
+  top: 1px;
+
+  width: 14px;
+  height: 14px;
+
+  border-radius: 50%;
+
+  background: var(--navy);
+
+  transform: translateX(-50%);
+}
+
+
+/* ==========================================
+   INFORMATIONS
+   ========================================== */
+
+.small-label {
+  margin: 0 0 5px;
+
+  color: var(--text-grey);
+
+  font-size: 23px;
+  font-weight: 400;
+}
+
+.student-name {
+  margin: 0;
+
+  color: var(--navy);
+
+  font-size: 31px;
+  font-weight: 700;
+}
+
+.red-line {
+  width: 72px;
+  height: 3px;
+
+  margin: 18px auto 25px;
+
+  background: var(--red);
+}
+
+.master-title {
+  margin: 0 0 6px;
+
+  color: var(--navy);
+
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.speciality {
+  margin: 0;
+
+  color: var(--navy);
+
+  font-size: 21px;
+  font-style: italic;
+
+  line-height: 1.35;
+}
+
+.supervisors-label {
+  margin-top: 42px;
+}
+
+.supervisors {
+  margin: 0;
+
+  color: var(--navy);
+
+  font-size: 29px;
+  font-weight: 700;
+}
+
+.ampersand {
+  margin: 0 17px;
+
+  color: var(--red);
+}
+
+
+/* ==========================================
+   VAGUES DÉCORATIVES
+   ========================================== */
+
+.bottom-waves {
+  position: absolute;
+
+  left: -10%;
+  bottom: -6px;
+
+  width: 120%;
+  height: 120px;
+
+  pointer-events: none;
+
+  opacity: 0.32;
+}
+
+.bottom-waves path {
+  fill: none;
+
+  stroke: var(--soft-blue);
+  stroke-width: 1.2;
+}
+
+
+/* ==========================================
+   ADAPTATION PETITS ÉCRANS
+   ========================================== */
+
+@media screen and (max-width: 1100px) {
+  .main-title {
+    font-size: 35px;
+  }
+
+  .master-title {
+    font-size: 21px;
+  }
+
+  .speciality {
+    font-size: 18px;
+  }
+
+  .supervisors {
+    font-size: 24px;
+  }
+}
